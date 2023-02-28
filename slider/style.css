@@ -1,0 +1,75 @@
+html, body, .corousel{
+    height: 100%;
+}
+
+input{
+    display: none;
+}
+
+.corousel{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.corousel-images{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: 0.5;
+}
+
+.corousel-images img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.corousel-controls {
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.corousel-controls, .dots{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+label{
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+.dots{
+    left: 0;
+    bottom: 0;
+    height: 400px;
+    background: linear-gradient(transparent, #666666 90%);
+    gap: 12px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+input:nth-child(1):checked ~ .corousel-images{
+    translate: 0;
+}
+
+input:nth-child(2):checked ~ .corousel-images{
+    translate: -100vw;
+}
+
+input:nth-child(3):checked ~ .corousel-images{
+    translate: -200vw;
+}
